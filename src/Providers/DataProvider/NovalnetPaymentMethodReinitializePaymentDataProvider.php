@@ -49,7 +49,6 @@ class NovalnetPaymentMethodReinitializePaymentDataProvider
         
         // Build the payment request paramters
         if(!empty($basketRepository->load())) {
-            $paymentService->logger('basket', $basketRepository->load());
             // Assign the billing and shipping address Id
             $basketRepository->load()->customerInvoiceAddressId = !empty($basketRepository->load()->customerInvoiceAddressId) ? $basketRepository->load()->customerInvoiceAddressId : $order['billingAddress']['id'];
             $basketRepository->load()->customerShippingAddressId = !empty($basketRepository->load()->customerShippingAddressId) ? $basketRepository->load()->customerShippingAddressId : $order['deliveryAddress']['id'];
