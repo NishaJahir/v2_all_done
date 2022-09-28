@@ -54,6 +54,7 @@ jQuery(document).ready(function() {
                 }
             }
         };
+        console.log(requestData);
         googlepayNovalnetPaymentObj.setPaymentIntent(requestData);
         // Checking for the Payment Method availability
         googlepayNovalnetPaymentObj.isPaymentMethodAvailable(function(displayGooglePayButton) {
