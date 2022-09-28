@@ -63,7 +63,7 @@ class NovalnetGooglePayButtonDataProvider
                             'testMode'      => ($settingsService->getPaymentSettingsValue('test_mode', 'novalnet_google_pay') == true) ? 'SANDBOX' : 'PRODUCTION'
                          ];
         // Render the Google Pay button
-       return $twig->render('Novalnet::PaymentForm.NovalnetGooglePayButton', 
+       return $twig->render('Novalnet::NovalnetGooglePayButtonDataProvider', 
                                     [
                                         'mopId'                 => $paymentMethodDetails->id, 
                                         'googlePayData'         => $googlePayData, 
