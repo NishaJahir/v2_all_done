@@ -538,11 +538,11 @@ class NovalnetAssistant extends WizardProvider
     */
     public function createOnHoldConfiguration($config)
     {
-         $onHoldSupportedRedirectionPayments = ['novalnetSepa', 'novalnetCc', 'novalnetInvoice', 'novalnetGuaranteedInvoice', 'novalnetGuaranteedSepa', 'novalnetPaypal', 'novalnetApplepay', 'novalnetGooglepay'];   
-         foreach($onHoldSupportedRedirectionPayments as $onHoldSupportedRedirectionPayment) {
-            $config['steps'][$paymentMethodKey]['sections'][]['form'] = 
+         $onHoldPayments = ['novalnetSepa', 'novalnetCc', 'novalnetInvoice', 'novalnetGuaranteedInvoice', 'novalnetGuaranteedSepa', 'novalnetPaypal', 'novalnetApplepay', 'novalnetGooglepay'];   
+         foreach($onHoldPayments as $onHoldPayment) {
+            $config['steps'][$onHoldPayment]['sections'][]['form'] = 
             [
-                $paymentMethodKey. 'PaymentAction' => 
+                $onHoldPayment . 'PaymentAction' => 
                 [
                     'type'          => 'select',
                     'defaultValue'  => 0,
@@ -560,7 +560,7 @@ class NovalnetAssistant extends WizardProvider
                                         ]
                                        ]
                 ],
-                $paymentMethodKey. 'OnHold' => 
+                $onHoldPayment . 'OnHold' => 
                 [
                     'type'      => 'text',
                     'options'   => [
