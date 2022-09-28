@@ -700,10 +700,10 @@ class NovalnetAssistant extends WizardProvider
         // Button types
         $ButtonTypes = ['Buy' => 'buy', 'Book' => 'book', 'Checkout' => 'checkout', 'Donate' => 'donate', 'Order' => 'order', 'Pay' => 'pay', 'Plain' => 'plain', 'Subscribe' => 'subscribe'];
         $googlePayButtonTypes = [];
-        foreach($googlePayButtonTypes as $googlePayButtonTypeIndex => $googlePayButtonType) {
+        foreach($ButtonTypes as $buttonTypeIndex => $buttonType) {
                 $googlePayButtonTypes[] = [
-                                            'caption' => 'NovalnetAssistant.novalnetGooglepay' . $googlePayButtonTypeIndex . 'Label',
-                                            'value' => $googlePayButtonType
+                                            'caption' => 'NovalnetAssistant.novalnetGooglepay' . $buttonTypeIndex . 'Label',
+                                            'value' => $buttonType
                                           ];
         }
         return $googlePayButtonTypes;
