@@ -54,7 +54,7 @@ class NovalnetGooglePayButtonDataProvider
         // Required details for the Google Pay button
         $googlePayData = [
                             'clientKey'     => trim($settingsService->getPaymentSettingsValue('novalnet_client_key')),
-                            'MerchantId'    => $settingsService->getPaymentSettingsValue('merchant_id', 'novalnet_googlepay'),
+                            'merchantId'    => $settingsService->getPaymentSettingsValue('merchant_id', 'novalnet_googlepay'),
                             'sellerName'    => $settingsService->getPaymentSettingsValue('business_name', 'novalnet_googlepay'),
                             'enforce'       => $settingsService->getPaymentSettingsValue('enforce', 'novalnet_googlepay'),
                             'buttonType'    => $settingsService->getPaymentSettingsValue('button_type', 'novalnet_googlepay'),
