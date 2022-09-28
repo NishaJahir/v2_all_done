@@ -54,13 +54,13 @@ class NovalnetGooglePayButtonDataProvider
         // Required details for the Google Pay button
         $googlePayData = [
                             'clientKey'     => trim($settingsService->getPaymentSettingsValue('novalnet_client_key')),
-                            'MerchantId'    => $settingsService->getPaymentSettingsValue('payment_active', 'novalnet_google_pay'),
-                            'sellerName'    => $settingsService->getPaymentSettingsValue('business_name', 'novalnet_google_pay'),
-                            'enforce'       => $settingsService->getPaymentSettingsValue('enforce', 'novalnet_google_pay'),
-                            'buttonType'    => $settingsService->getPaymentSettingsValue('button_type', 'novalnet_google_pay'),
-                            'buttonTheme'   => $settingsService->getPaymentSettingsValue('button_theme', 'novalnet_google_pay'),
-                            'buttonHeight'  => $settingsService->getPaymentSettingsValue('button_height', 'novalnet_google_pay'),
-                            'testMode'      => ($settingsService->getPaymentSettingsValue('test_mode', 'novalnet_google_pay') == true) ? 'SANDBOX' : 'PRODUCTION'
+                            'MerchantId'    => $settingsService->getPaymentSettingsValue('merchant_id', 'novalnet_googlepay'),
+                            'sellerName'    => $settingsService->getPaymentSettingsValue('business_name', 'novalnet_googlepay'),
+                            'enforce'       => $settingsService->getPaymentSettingsValue('enforce', 'novalnet_googlepay'),
+                            'buttonType'    => $settingsService->getPaymentSettingsValue('button_type', 'novalnet_googlepay'),
+                            'buttonTheme'   => $settingsService->getPaymentSettingsValue('button_theme', 'novalnet_googlepay'),
+                            'buttonHeight'  => $settingsService->getPaymentSettingsValue('button_height', 'novalnet_googlepay'),
+                            'testMode'      => ($settingsService->getPaymentSettingsValue('test_mode', 'novalnet_googlepay') == true) ? 'SANDBOX' : 'PRODUCTION'
                          ];
         // Render the Google Pay button
        return $twig->render('Novalnet::NovalnetGooglePayButtonDataProvider', 
