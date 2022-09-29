@@ -30,10 +30,10 @@ jQuery(document).ready(function() {
                 button: {
                     type: jQuery('#nn_button_type').val(),
                     style: jQuery('#nn_button_theme').val(),
-                    locale: "en-US", // Needs to update based on forum reply
-                    boxSizing: "border-box",
+                    locale: "en-US",
+                    boxSizing: "fill",
                     dimensions: {
-                        height: jQuery('#nn_button_height').val(),
+                        height: 45,
                         width: 200
                     }
                 },
@@ -41,7 +41,6 @@ jQuery(document).ready(function() {
                     onProcessCompletion: function (response, processedStatus) {
                         // Only on success, we proceed further with the booking
                         if(response.result.status == "SUCCESS") {
-                            console.log(response);
                             jQuery('#nn_google_pay_token').val(response.transaction.token);
                             jQuery('#nn_google_pay_form').submit();
                         } else {
@@ -70,7 +69,7 @@ jQuery(document).ready(function() {
                 });
             } else {
                 // Hide the Google Pay payment if it is not possible
-                jQuery('li[data-id="'+mopId+'"]').show();
+                jQuery('li[data-id="'+mopId+'"]').hide();
             }
         });
     } catch (e) {
