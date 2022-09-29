@@ -9,14 +9,12 @@ jQuery(document).ready(function() {
             clientKey: String(jQuery('#nn_client_key').val()),
             paymentIntent: {
                 merchant: {
-                    paymentDataPresent: false,
                     countryCode : String(jQuery('#nn_google_pay').attr('data-country')),
                     partnerId: jQuery('#nn_merchant_id').val(),
                 },
                 transaction: {
                     amount: String(jQuery('#nn_google_pay').attr('data-total-amount')),
                     currency: String(jQuery('#nn_google_pay').attr('data-currency')), 
-                    enforce3d: jQuery('#nn_enforce').val(),
                     paymentMethod: "GOOGLEPAY",
                     environment: jQuery('#nn_environment').val(),
                 },
@@ -24,7 +22,6 @@ jQuery(document).ready(function() {
                     lang: String(jQuery('#nn_google_pay').attr('data-order-lang'))
                 },
                 order: {
-                    paymentDataPresent: false,
                     merchantName: String(jQuery('#nn_business_name').val()),
                 },
                 button: {
@@ -59,6 +56,7 @@ jQuery(document).ready(function() {
         googlepayNovalnetPaymentObj.isPaymentMethodAvailable(function(displayGooglePayButton) {
             var mopId = jQuery('#nn_google_pay_mop').val();
             if(displayGooglePayButton) {
+                console.log(displayGooglePayButton);
                 // Display the Google Pay payment
                 jQuery('li[data-id="'+mopId+'"]').show();
                 jQuery('li[data-id="'+mopId+'"]').click(function() {
