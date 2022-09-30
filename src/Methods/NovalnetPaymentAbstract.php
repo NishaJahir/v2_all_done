@@ -249,7 +249,7 @@ abstract class NovalnetPaymentAbstract extends PaymentMethodBaseService
     public function getBackendIcon(): string
     {
         $app = pluginApp(Application::class);
-        $icon = $app->getUrlPath('novalnet') . '/images/logos/' . strtolower($this::PAYMENT_KEY) .'_backend_icon.svg';
+        $icon = $app->getUrlPath('novalnet') . '/images/logos/' . strtolower($this::PAYMENT_KEY) .'_backend_icon.png';
         return $icon;
     }
 }
